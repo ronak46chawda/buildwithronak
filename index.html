@@ -1,204 +1,53 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Vault 27 | Ronak Chawda</title>
-  <meta name="description" content="Premium neo-finance analytics portfolio of Ronak Chawda">
+  <meta name="description" content="Finance Business Partner | FP&A | Finance Analytics | Strategic Finance | Power BI | Financial Modelling | NetSuite | SaaS & FinTech | CA">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=General+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Manrope:wght@400;500;700;800&display=swap" rel="stylesheet">
   <style>
-    :root {
-      --bg: #090d14;
-      --ink: #f4f7fb;
-      --muted: #9ca8ba;
-      --line: #293445;
-      --amber: #ff9f43;
-      --steel: #91a7c7;
-      --blue: #6f8cff;
-      --panel: linear-gradient(180deg, #121826 0%, #0e1420 100%);
-      --metal: linear-gradient(130deg, #8598b6 0%, #d3dbe8 45%, #8ea4c2 100%);
-    }
-
-    * { box-sizing: border-box; }
-    body {
-      margin: 0;
-      color: var(--ink);
-      font-family: "General Sans", system-ui, sans-serif;
-      background:
-        radial-gradient(1200px 450px at 10% -15%, rgba(111, 140, 255, 0.18), transparent 58%),
-        radial-gradient(1000px 500px at 95% -20%, rgba(255, 159, 67, 0.14), transparent 55%),
-        #090d14;
-      overflow-x: hidden;
-    }
-
-    .wrap { width: min(1400px, 96vw); margin: 0 auto; }
-    .topbar {
-      position: sticky; top: 0; z-index: 100;
-      display: flex; justify-content: space-between; align-items: center;
-      padding: 1rem 0;
-      border-bottom: 1px solid var(--line);
-      background: rgba(9,13,20,0.72);
-      backdrop-filter: blur(8px);
-    }
-
-    .brand {
-      font-family: "JetBrains Mono", monospace;
-      font-size: .9rem;
-      letter-spacing: .08em;
-      color: #d4deee;
-    }
-
-    .nav a {
-      color: var(--muted); text-decoration: none; margin-left: 1rem; font-size: .9rem;
-      font-family: "JetBrains Mono", monospace;
-    }
-    .nav a:hover { color: white; }
-
-    .hero {
-      min-height: 88vh;
-      display: grid;
-      grid-template-columns: 1.2fr .9fr;
-      gap: 1.25rem;
-      align-items: center;
-      padding: 2.5rem 0 2rem;
-    }
-
-    .eyebrow {
-      display: inline-block;
-      border: 1px solid #44506a;
-      color: #d3dded;
-      padding: .26rem .58rem;
-      border-radius: 999px;
-      font-size: .75rem;
-      letter-spacing: .08em;
-      font-family: "JetBrains Mono", monospace;
-      background: rgba(255,255,255,.02);
-    }
-
-    h1 {
-      margin: .8rem 0;
-      font-size: clamp(2.4rem, 6vw, 5.7rem);
-      line-height: .98;
-      letter-spacing: -.02em;
-    }
-
-    .title-metal {
-      background: var(--metal);
-      -webkit-background-clip: text;
-      background-clip: text;
-      color: transparent;
-    }
-
-    .lead { color: var(--muted); font-size: 1.07rem; max-width: 62ch; line-height: 1.7; }
-    .cta-row { display: flex; gap: .7rem; margin-top: 1.1rem; flex-wrap: wrap; }
-    .btn {
-      display:inline-block; text-decoration:none; font-weight:700; border-radius:999px; padding:.72rem 1rem;
-      transition: transform .22s ease, box-shadow .22s ease;
-    }
-    .btn.main { background: linear-gradient(90deg, #ffb367, #ff8c2f); color: #2a1605; }
-    .btn.alt { border: 1px solid #3a4860; color: #e6eefc; }
-    .btn:hover { transform: translateY(-3px); box-shadow: 0 10px 28px rgba(0,0,0,.35); }
-
-    .vault-panel {
-      background: var(--panel);
-      border: 1px solid #33435c;
-      border-radius: 18px;
-      padding: 1rem;
-      position: relative;
-      overflow: hidden;
-      box-shadow: inset 0 1px 0 rgba(255,255,255,.04), 0 24px 40px rgba(0,0,0,.35);
-    }
-    .vault-panel::before {
-      content: "";
-      position: absolute; inset: -2px;
-      background: conic-gradient(from 100deg, rgba(255,159,67,.2), rgba(111,140,255,.2), rgba(255,159,67,.2));
-      filter: blur(30px); z-index: 0;
-    }
-    .vault-panel > * { position: relative; z-index: 1; }
-    .stat-grid { display:grid; grid-template-columns:1fr 1fr; gap:.7rem; }
-    .stat {
-      border: 1px solid #2f3e55; border-radius: 12px; padding: .8rem;
-      background: rgba(255,255,255,.02);
-    }
-    .stat b { display:block; font-size:1.3rem; color:#f4f8ff; }
-    .stat span { color:#98a8be; font-size:.82rem; font-family:"JetBrains Mono", monospace; }
-
-    section { padding: 2rem 0; }
-    h2 { font-size: clamp(1.5rem, 3vw, 2.4rem); margin: 0 0 1rem; }
-    .grid4 { display:grid; grid-template-columns: repeat(4, 1fr); gap:1rem; }
-    .grid2 { display:grid; grid-template-columns: repeat(2, 1fr); gap:1rem; }
-    .card {
-      background: var(--panel);
-      border: 1px solid #2b384d;
-      border-radius: 14px;
-      padding: 1rem;
-      transition: transform .28s ease, border-color .28s ease;
-    }
-    .card:hover { transform: translateY(-6px); border-color: #4f6586; }
-    .chip {
-      display:inline-block; font-size:.74rem; padding:.2rem .5rem; border-radius:999px;
-      font-family:"JetBrains Mono", monospace; color:#f7d3a3; background:rgba(255,159,67,.14); margin-bottom:.55rem;
-    }
-    .muted { color: var(--muted); line-height: 1.62; }
-    .links a {
-      color: #b8c7dd; text-decoration: none; margin-right: .8rem; font-family: "JetBrains Mono", monospace; font-size: .8rem;
-    }
-    .links a:hover { color: #fff; text-decoration: underline; }
-    .shot { width: 100%; margin-top: .8rem; border-radius: 10px; border: 1px solid #30415a; background: #0e1827; }
-
-    .reveal { opacity: 0; transform: translateY(18px); transition: opacity .7s ease, transform .7s ease; }
-    .reveal.show { opacity: 1; transform: translateY(0); }
-
-    footer {
-      border-top: 1px solid var(--line);
-      padding: 1.4rem 0 2.2rem;
-      color: var(--muted);
-      text-align: center;
-      font-size: .92rem;
-    }
-
-    @media (max-width: 1120px) {
-      .hero { grid-template-columns: 1fr; min-height: auto; }
-      .grid4 { grid-template-columns: repeat(2, 1fr); }
-    }
-    @media (max-width: 740px) {
-      .nav { display:none; }
-      .grid4, .grid2 { grid-template-columns: 1fr; }
-    }
+    :root{--bg:#090d14;--ink:#f4f7fb;--muted:#9ca8ba;--line:#293445;--amber:#ff9f43;--panel:linear-gradient(180deg,#121826 0%,#0e1420 100%);--metal:linear-gradient(130deg,#8598b6 0%,#d3dbe8 45%,#8ea4c2 100%)}
+    *{box-sizing:border-box} body{margin:0;color:var(--ink);font-family:"Manrope",sans-serif;background:radial-gradient(1200px 450px at 10% -15%,rgba(111,140,255,.18),transparent 58%),radial-gradient(1000px 500px at 95% -20%,rgba(255,159,67,.14),transparent 55%),#090d14}
+    .wrap{width:min(1400px,96vw);margin:0 auto}.topbar{position:sticky;top:0;z-index:100;display:flex;justify-content:space-between;align-items:center;padding:1rem 0;border-bottom:1px solid var(--line);background:rgba(9,13,20,.72);backdrop-filter:blur(8px)}
+    .brand{font-family:"JetBrains Mono",monospace;font-size:.9rem;letter-spacing:.08em;color:#d4deee}.nav a{color:var(--muted);text-decoration:none;margin-left:1rem;font-size:.9rem;font-family:"JetBrains Mono",monospace}.nav a:hover{color:#fff}
+    .hero{min-height:88vh;display:grid;grid-template-columns:1.2fr .9fr;gap:1.25rem;align-items:center;padding:2.5rem 0 2rem}.eyebrow{display:inline-block;border:1px solid #44506a;color:#d3dded;padding:.26rem .58rem;border-radius:999px;font-size:.75rem;letter-spacing:.08em;font-family:"JetBrains Mono",monospace;background:rgba(255,255,255,.02)}
+    h1{margin:.8rem 0;font-size:clamp(2.4rem,6vw,5.5rem);line-height:.98;letter-spacing:-.02em}.title-metal{background:var(--metal);-webkit-background-clip:text;background-clip:text;color:transparent}.lead{color:var(--muted);font-size:1.07rem;max-width:66ch;line-height:1.7}
+    .cta-row{display:flex;gap:.7rem;margin-top:1.1rem;flex-wrap:wrap}.btn{display:inline-block;text-decoration:none;font-weight:700;border-radius:999px;padding:.72rem 1rem;transition:transform .22s ease,box-shadow .22s ease}.btn.main{background:linear-gradient(90deg,#ffb367,#ff8c2f);color:#2a1605}.btn.alt{border:1px solid #3a4860;color:#e6eefc}.btn:hover{transform:translateY(-3px);box-shadow:0 10px 28px rgba(0,0,0,.35)}
+    .vault-panel{background:var(--panel);border:1px solid #33435c;border-radius:18px;padding:1rem;position:relative;overflow:hidden;box-shadow:inset 0 1px 0 rgba(255,255,255,.04),0 24px 40px rgba(0,0,0,.35)} .stat-grid{display:grid;grid-template-columns:1fr 1fr;gap:.7rem}
+    .stat{border:1px solid #2f3e55;border-radius:12px;padding:.8rem;background:rgba(255,255,255,.02)}.stat b{display:block;font-size:1.2rem}.stat span{color:#98a8be;font-size:.82rem;font-family:"JetBrains Mono",monospace}
+    section{padding:2rem 0} h2{font-size:clamp(1.5rem,3vw,2.2rem);margin:0 0 1rem}.grid4{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem}.grid2{display:grid;grid-template-columns:repeat(2,1fr);gap:1rem}
+    .card{background:var(--panel);border:1px solid #2b384d;border-radius:14px;padding:1rem;transition:transform .28s ease,border-color .28s ease}.card:hover{transform:translateY(-6px);border-color:#4f6586}
+    .chip{display:inline-block;font-size:.74rem;padding:.2rem .5rem;border-radius:999px;font-family:"JetBrains Mono",monospace;color:#f7d3a3;background:rgba(255,159,67,.14);margin-bottom:.55rem}.muted{color:var(--muted);line-height:1.62}
+    .links a{color:#b8c7dd;text-decoration:none;margin-right:.8rem;font-family:"JetBrains Mono",monospace;font-size:.8rem}.links a:hover{color:#fff;text-decoration:underline}.shot{width:100%;margin-top:.8rem;border-radius:10px;border:1px solid #30415a;background:#0e1827}
+    .reveal{opacity:0;transform:translateY(18px);transition:opacity .7s ease,transform .7s ease}.reveal.show{opacity:1;transform:translateY(0)} footer{border-top:1px solid var(--line);padding:1.4rem 0 2.2rem;color:var(--muted);text-align:center;font-size:.92rem}
+    @media (max-width:1120px){.hero{grid-template-columns:1fr;min-height:auto}.grid4{grid-template-columns:repeat(2,1fr)}} @media (max-width:740px){.nav{display:none}.grid4,.grid2{grid-template-columns:1fr}}
   </style>
 </head>
 <body>
   <div class="wrap">
     <header class="topbar">
       <div class="brand">VAULT_27 // RONAK_CHAWDA</div>
-      <nav class="nav">
-        <a href="#skills">skills</a>
-        <a href="#projects">projects</a>
-        <a href="#story">story</a>
-        <a href="#contact">contact</a>
-      </nav>
+      <nav class="nav"><a href="#skills">skills</a><a href="#projects">projects</a><a href="#experience">experience</a><a href="#codex">codex-builds</a><a href="#contact">contact</a></nav>
     </header>
 
     <main>
       <section class="hero reveal">
         <div>
-          <span class="eyebrow">NEO-FINANCE ANALYTICS PORTFOLIO</span>
-          <h1><span class="title-metal">Ronak Chawda</span><br>Data Systems That Drive Decisions</h1>
-          <p class="lead">I turn raw business data into high-trust analytics products. My focus is finance and operations: reconciliation visibility, portfolio risk monitoring, and executive dashboards that make decision cycles faster.</p>
-          <div class="cta-row">
-            <a class="btn main" href="#projects">View Project Vault</a>
-            <a class="btn alt" href="https://www.linkedin.com/in/ronak-chawda-ca">LinkedIn Profile</a>
-          </div>
+          <span class="eyebrow">FINANCE BUSINESS PARTNER | FP&A | FINANCE ANALYTICS | CA</span>
+          <h1><span class="title-metal">Ronak Chawda</span><br>Using Finance Data To Shape What Happens Next</h1>
+          <p class="lead">As a Chartered Accountant across SaaS, FinTech, and high-growth businesses, I work at the intersection of financial planning, operational decision-making, and finance automation. I build forecasting models, MIS dashboards, and profitability analytics that leadership teams can act on immediately.</p>
+          <div class="cta-row"><a class="btn main" href="#projects">View Project Vault</a><a class="btn alt" href="https://www.linkedin.com/in/ronak-chawda-ca">LinkedIn Profile</a></div>
         </div>
         <aside class="vault-panel">
-          <h3 style="margin-top:.2rem;">Vault Metrics</h3>
+          <h3 style="margin-top:.2rem;">Impact Highlights</h3>
           <div class="stat-grid">
-            <div class="stat"><b>Python</b><span>Automation + Data Logic</span></div>
-            <div class="stat"><b>SQL</b><span>Query Engineering</span></div>
-            <div class="stat"><b>Power BI</b><span>Ops Dashboards</span></div>
-            <div class="stat"><b>Tableau</b><span>Visual Storytelling</span></div>
+            <div class="stat"><b>40-90%</b><span>Manual effort reduced via automation</span></div>
+            <div class="stat"><b>~80%</b><span>Budget accuracy improvement</span></div>
+            <div class="stat"><b>~30%</b><span>Faster month-end close cycles</span></div>
+            <div class="stat"><b>$750K+</b><span>Annual cloud cost optimization</span></div>
           </div>
         </aside>
       </section>
@@ -206,84 +55,56 @@
       <section id="skills" class="reveal">
         <h2>Core Skills</h2>
         <div class="grid4">
-          <article class="card">
-            <span class="chip">Programming</span>
-            <h3>Python + SQL</h3>
-            <p class="muted">Data extraction, cleaning, transformation pipelines, and reliable analytics logic.</p>
-          </article>
-          <article class="card">
-            <span class="chip">BI Layer</span>
-            <h3>Power BI + Tableau</h3>
-            <p class="muted">Interactive dashboards built for action, not just reporting.</p>
-          </article>
-          <article class="card">
-            <span class="chip">Finance Lens</span>
-            <h3>KPI Design</h3>
-            <p class="muted">Metrics aligned to business outcomes and management review cycles.</p>
-          </article>
-          <article class="card">
-            <span class="chip">Operations</span>
-            <h3>Reconciliation Intelligence</h3>
-            <p class="muted">Exception-led monitoring to reduce manual effort and improve controls.</p>
-          </article>
+          <article class="card"><span class="chip">FP&A</span><h3>Planning and Forecasting</h3><p class="muted">Budgeting, variance analysis, cash flow planning, working capital forecasting.</p></article>
+          <article class="card"><span class="chip">Analytics</span><h3>Strategic Finance Insights</h3><p class="muted">Revenue and cost driver analysis, profitability visibility, KPI architecture.</p></article>
+          <article class="card"><span class="chip">BI Stack</span><h3>Power BI + Excel + SQL</h3><p class="muted">Action-focused MIS dashboards and operational analytics for leadership.</p></article>
+          <article class="card"><span class="chip">Enterprise</span><h3>Oracle NetSuite + Oracle Fusion</h3><p class="muted">ERP-driven reporting frameworks and finance process transformation.</p></article>
         </div>
       </section>
 
       <section id="projects" class="reveal">
         <h2>Project Vault</h2>
         <div class="grid2">
-          <article class="card">
-            <h3>Collections Performance Dashboard</h3>
-            <p class="muted">Improved recovery action speed by surfacing risk signals and trend movement in one view.</p>
-            <p class="links"><a href="#">Live Dashboard</a><a href="#">Project Repository</a></p>
-            <img class="shot" src="images/project1.svg" alt="Collections dashboard">
-          </article>
-          <article class="card">
-            <h3>Loan Portfolio Health & DPD</h3>
-            <p class="muted">Tracked DPD bucket migration to identify vulnerable cohorts before escalation.</p>
-            <p class="links"><a href="#">Live Dashboard</a><a href="#">Project Repository</a></p>
-            <img class="shot" src="images/project2.svg" alt="DPD dashboard">
-          </article>
-          <article class="card">
-            <h3>Reconciliation Automation Insights</h3>
-            <p class="muted">Exception-first views for mismatch detection and faster finance closure cycles.</p>
-            <p class="links"><a href="#">Live Dashboard</a><a href="#">Project Repository</a></p>
-            <img class="shot" src="images/project3.svg" alt="Reconciliation dashboard">
-          </article>
-          <article class="card">
-            <h3>Executive KPI Tracker</h3>
-            <p class="muted">Single source of truth for weekly leadership reviews and monthly business pulse.</p>
-            <p class="links"><a href="#">Live Dashboard</a><a href="#">Project Repository</a></p>
-            <img class="shot" src="images/project4.svg" alt="KPI tracker dashboard">
-          </article>
+          <article class="card"><h3>Collections Performance Dashboard</h3><p class="muted">Tracked recovery trends and risk signals to improve action turnaround time.</p><p class="links"><a href="#">Live Dashboard</a><a href="#">Project Repository</a></p><img class="shot" src="images/project1.svg" alt="Collections dashboard"></article>
+          <article class="card"><h3>Loan Portfolio Health and DPD</h3><p class="muted">Monitored DPD bucket migration and surfaced high-risk segments earlier.</p><p class="links"><a href="#">Live Dashboard</a><a href="#">Project Repository</a></p><img class="shot" src="images/project2.svg" alt="DPD dashboard"></article>
+          <article class="card"><h3>Reconciliation Automation Insights</h3><p class="muted">Exception-first mismatch monitoring that improved control visibility.</p><p class="links"><a href="#">Live Dashboard</a><a href="#">Project Repository</a></p><img class="shot" src="images/project3.svg" alt="Reconciliation dashboard"></article>
+          <article class="card"><h3>Executive KPI Tracker</h3><p class="muted">Unified weekly and monthly business reviews through one KPI system.</p><p class="links"><a href="#">Live Dashboard</a><a href="#">Project Repository</a></p><img class="shot" src="images/project4.svg" alt="KPI tracker dashboard"></article>
         </div>
       </section>
 
-      <section id="story" class="reveal">
-        <h2>Experience & Education</h2>
+      <section id="experience" class="reveal">
+        <h2>Experience</h2>
         <div class="grid2">
-          <article class="card">
-            <h3>Experience</h3>
-            <p class="muted">Chartered Accountant delivering analytics-led solutions across finance and operations, with focus on controls, visibility, and decision speed.</p>
-          </article>
-          <article class="card">
-            <h3>Education</h3>
-            <p class="muted">Chartered Accountant (CA), The Institute of Chartered Accountants of India.</p>
-          </article>
+          <article class="card"><span class="chip">Jun 2025 - Mar 2026</span><h3>Financial Controller, Eco Hotels and Resorts</h3><p class="muted">Led monthly business reviews across properties, built automated MIS dashboards, developed P&L/cash-flow/working-capital models, and improved EBITDA through variance-led controls.</p></article>
+          <article class="card"><span class="chip">Sep 2023 - Jun 2025</span><h3>Manager Finance, CleverTap</h3><p class="muted">Owned global budgeting and forecasting for $96M+ budget, automated ASC 606 workflows, drove SaaS KPI analytics (ARR, MRR, CAC, churn), and delivered $750K+ annual savings.</p></article>
+          <article class="card"><span class="chip">Jan 2023 - Sep 2023</span><h3>Finance Manager, Benow</h3><p class="muted">Led MIS and performance dashboarding for GTV, take rate, CAC, and profitability; supported Annual Operating Plan and revenue-growth initiatives.</p></article>
+          <article class="card"><span class="chip">Jan 2021 - Jan 2023</span><h3>Assistant Manager Finance, Benow</h3><p class="muted">Built finance reporting systems, automated workflows, and supported financial due diligence for a 55 Cr M&A transaction.</p></article>
+        </div>
+      </section>
+
+      <section id="codex" class="reveal">
+        <h2>Projects Built Through Codex</h2>
+        <div class="grid2">
+          <article class="card"><span class="chip">Codex Build</span><h3>Vault 27 Portfolio Website</h3><p class="muted">Designed and deployed a full-width neo-finance GitHub Pages portfolio with responsive layouts, transitions, and storytelling sections.</p><p class="links"><a href="https://ronak46chawda.github.io/buildwithronak/">Live Website</a><a href="https://github.com/ronak46chawda/buildwithronak">Repository</a></p></article>
+          <article class="card"><span class="chip">Codex Build</span><h3>Profile-to-Web Content Engine</h3><p class="muted">Converted resume/profile content into web-ready sections: summary, quantified achievements, experience highlights, and recruiter-friendly narrative.</p></article>
+        </div>
+      </section>
+
+      <section class="reveal">
+        <h2>Education</h2>
+        <div class="grid2">
+          <article class="card"><h3>Chartered Accountant</h3><p class="muted">The Institute of Chartered Accountants of India (Dec 2015 - Nov 2022)</p></article>
+          <article class="card"><h3>Bachelor of Commerce (BCom)</h3><p class="muted">Nagindas Khandwala College</p></article>
         </div>
       </section>
     </main>
 
-    <footer id="contact">
-      Built in Vault 27 style by Ronak Chawda. Connect on <a href="https://www.linkedin.com/in/ronak-chawda-ca" style="color:#d7e4f7;">LinkedIn</a>.
-    </footer>
+    <footer id="contact">Contact: ronak47chawda@gmail.com | Mumbai, Maharashtra | <a href="https://www.linkedin.com/in/ronak-chawda-ca" style="color:#d7e4f7;">LinkedIn</a></footer>
   </div>
 
   <script>
-    const obs = new IntersectionObserver((entries) => {
-      entries.forEach((e) => { if (e.isIntersecting) e.target.classList.add("show"); });
-    }, { threshold: 0.14 });
-    document.querySelectorAll(".reveal").forEach((el) => obs.observe(el));
+    const obs = new IntersectionObserver((entries)=>{entries.forEach((e)=>{if(e.isIntersecting)e.target.classList.add("show")})},{threshold:.14});
+    document.querySelectorAll(".reveal").forEach((el)=>obs.observe(el));
   </script>
 </body>
 </html>
