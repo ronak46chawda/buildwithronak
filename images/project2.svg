@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="540" viewBox="0 0 960 540">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#15344f"/>
+      <stop offset="100%" stop-color="#2a9d8f"/>
+    </linearGradient>
+  </defs>
+  <rect width="960" height="540" fill="url(#bg)"/>
+  <rect x="70" y="70" width="820" height="400" rx="20" fill="#ffffff" opacity="0.92"/>
+  <text x="110" y="145" font-family="Arial" font-size="34" fill="#14324d">Loan Portfolio Health and DPD Analysis</text>
+  <rect x="110" y="180" width="300" height="18" rx="9" fill="#dce8f4"/>
+  <rect x="110" y="215" width="280" height="18" rx="9" fill="#dce8f4"/>
+  <rect x="110" y="265" width="740" height="170" rx="12" fill="#ecf3fa"/>
+</svg>
